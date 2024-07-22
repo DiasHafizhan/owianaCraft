@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" type="x-icon" href="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Kategori</title>
+  <link rel="stylesheet" href="notif.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <title>Image Overlay with Text</title>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="notifpesanan" id="notifpesanan">
+      <button class="close">✖</button>
+      <img src="check.jpg" title="check" />
+      <h1>Terimakasih Atas Pesanan Anda</h1>
+
+      <p>Untuk melakukan pembayaran, Anda akan diarahkan ke Whatsapp.
+        <br>
+        <br>Silahkan klik OK dibawah ini.
+      </p>
+      <button class="accept">
+        <a
+          href="https://api.whatsapp.com/send?phone=6282218931413&text=SELAMAT%20DATANG%20DI%20OWIANACRAFTS%0A
+          Nama%20Pemesanan%20:%20<%= data[4] %>%0A
+          Email%20:%20<%= data[5] %>%0A
+          Nama%20Pesanan%20:%20<%= data[1] %>%0A
+          Total%20Harga%20:%20<%= data[3] %>%0A
+          Alamat%20:%20<%= data[6] %>%0A
+          Note:%20Silakan%20hubungi%20kami%20jika%20ada%20perubahan%20atau%20pertanyaan%20lebih%20lanjut%20mengenai%20pesanan%20Anda.%20Terima%20kasih%20telah%20memilih%20layanan%20catering%20kami.">
+          OK
+        </a>
+
+      </button>
+    </div>
+  </div>
+
+</body>
+
+</html>

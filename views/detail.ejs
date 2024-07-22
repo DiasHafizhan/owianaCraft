@@ -1,0 +1,29 @@
+<%- include("partials/header.ejs") %>
+
+<div class="single-product">
+    <div class="row">
+        <div class="col-2">
+            <img src="/images/<%= product.product_image %>" alt="<%= product.nama_produk %>" width="200px" id="ProductImg">
+        </div>
+        <div class="col-2">
+            <h1><%= product.product_name %></h1>
+            <div style="border-top: 1px solid #e84393; height: 10px;"></div>
+            <h4>Rp. <%= (() => { 
+                let formattedTotalHarga = product.product_price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                return formattedTotalHarga;
+              })() %></h4>
+            <form action="/checkout" method="POST"> <!-- Replace with your checkout route -->
+                <input type="number" name="quantity" value="1">
+                <input type="hidden" name="productId" value="<%= product.id %>"> <!-- Include product ID -->
+                <button type="submit" class="btn">Beli Sekarang</button>
+            </form>
+            <h3>Detail Produk<i class="fa fa-indent"></i></h3>
+            <p class="detail-desc">
+                <%= product.product_desc %>
+            </p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

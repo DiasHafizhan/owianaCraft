@@ -1,0 +1,79 @@
+<%- include ("partials/header.ejs") %>
+
+    <section class="produk" id="produk">
+
+        <h1 class="heading"> <span> Gantungan </span> Kunci </h1>
+
+        <hr width="10%" display="center" color="#ff0000">
+
+        <div class="produk">
+            <div class="box-container">
+                <% products.map((item)=>{ %>
+                    <% if(item.product_type == "Gantungan"){ %>
+                        <div class="box-card">
+                            <div class="cart-container">
+                                <span class="diskon">BARU</span>
+                                <div class="image">
+                                    <img src="/images/<%= item.product_image %>" alt="<%= item.product_name %>" />
+                                    <div class="icons">
+                                        <a href="/detail/<%= item.id %>">
+                                            <i class='bx bx-shopping-bag' title="Beli Sekarang"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <h3><%= item.product_name %></h3>
+                                    <div class="price">Rp.<%= (() => { 
+                                        let formattedTotalHarga = item.product_price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                                        return formattedTotalHarga;
+                                      })() %></div>
+                                </div>
+                            </div>
+                        </div>
+                        <%  }%>
+                    <% }) %>
+            </div>
+        </div>
+
+        <h1 class="heading"> <span> Alat </span> Rajut </h1>
+
+        <hr width="10%" display="center" color="#ff0000">
+
+        <div class="produk">
+            <div class="box-container">
+                <% products.map((item)=>{ %>
+                    <% if(item.product_type == "Alat Merajut"){ %>
+                        <div class="box-card">
+                            <div class="cart-container">
+                                <span class="diskon">BARU</span>
+                                <div class="image">
+                                    <img src="/images/<%= item.product_image %>" alt="<%= item.product_name %>" />
+                                    <div class="icons">
+                                        <a href="/detail/<%= item.id %>">
+                                            <i class='bx bx-shopping-bag' title="Beli Sekarang"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <h3><%= item.product_name %></h3>
+                                    <div class="price">Rp.<%= item.product_price %></div>
+                                </div>
+                            </div>
+                        </div>
+                        <%  }%>
+                    <% }) %>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="footer-box">
+            <h2>OwianaCrafts!</h2>
+            <p>Kontak Kami</p>
+            <p>0822-1893-1413</p>
+        </div>
+    </section>
+
+    </body>
+
+    </html>
